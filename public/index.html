@@ -33,14 +33,14 @@
         <h1 class="display-4">Hello!</h1>
         <p class="lead">Thank you for taking the time to take this survey!</p>
         <hr class="my-4">
-        <div class="row p-4">
+        <!-- <div class="row p-4">
             <div class="col">
               <input type="text" id="fName" class="form-control" placeholder="First name">
             </div>
             <div class="col">
               <input type="text"  id="lName" class="form-control" placeholder="Last name">
             </div>
-        </div>
+        </div> -->
         <a class="btn btn-primary btn-lg mt-2 ml-4" onclick="start()" role="button">Start</a>
       </div>
 
@@ -51,7 +51,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">Have you heard about or seen the company shown in the logo?</h5>
-          <p class="card-text"><img src="abc.png" height="250"></p>
+          <p class="card-text"><img src="abc.jpg" class="img-fluid" style="max-height: 250px;"></p>
           <a onclick="question1('Yes')" class="btn btn-primary">Yes</a>
           <a onclick="question1('No')" class="btn btn-primary">No</a>
         </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">What 3 things would you associate about this company when looking at its logo?</h5>
-          <p class="card-text"><img src="abc.png" height="250"></p>
+          <p class="card-text"><img src="abc.jpg" class="img-fluid" style="max-height: 250px;"></p>
           <div class="p-4">
             <textarea placeholder="Text area..." class="form-control" id="resText" rows="3"></textarea>
 
@@ -83,17 +83,33 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">Based off the logo do you feel the company is:</h5>
-                <p class="card-text"><img src="abc.png" height="250"></p>
-                <a onclick="question3('A')" class="btn btn-primary">A.) Big Corporate Company</a>
-                <a onclick="question3('B')" class="btn btn-primary">B.) Niche, user friendly company</a>
-                <a onclick="question3('C')" class="btn btn-primary">C.) Not enough to decide</a>
+                <p class="card-text"><img src="abc.jpg" class="img-fluid" style="max-height: 250px;"></p>
+                <a onclick="question3('A')" class="btn mt-1 btn-primary">A.) Big Corporate Company</a>
+                <a onclick="question3('B')" class="btn mt-1 btn-primary">B.) Niche, user friendly company</a>
+                <a onclick="question3('C')" class="btn mt-1 btn-primary">C.) Not enough to decide</a>
             </div>
             </div>
+            <!-- QUESTION 3-->
+            <div class="card text-center" style="display: none;" id="q4">
+                <div class="card-header">
+                    Question 4
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">What field do you feel the Company that this logo belongs to is in <small>(be as specific as you possibly can)</small>:</h5>
+                    <p class="card-text"><img src="abc.jpg" class="img-fluid" style="max-height: 250px;"></p>
+                    <div class="p-4">
+                        <textarea placeholder="Text area..." class="form-control" id="resText2" rows="3"></textarea>
+                      </div>
+                      <a onclick="question4()" class="btn btn-primary">Submit</a>
+                </div>
+                </div>
+
+            
 
             <div class="jumbotron" style="background-color: white; display: none;" id="c1" >
-            <h1 class="display-4">Almost done!</h1>
-            <p class="lead">Thank you for taking the time to take this survey!</p>
-            <a onclick="submitSurvey()" class="btn btn-primary">Submit Survey</a>
+            <h1 class="display-4" id="ad">Almost done!</h1>
+            <h1 class="display-4" id="done" style="display:none;">All done, thank you!</h1>
+            <a onclick="submitSurvey()" id="donebtn" class="btn btn-primary">Submit Survey</a>
             </div>
 
 

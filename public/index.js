@@ -3,18 +3,18 @@
 const obj = [];
 
 function start(){
-    const fn = document.getElementById('fName').value;
-    const ln = document.getElementById('lName').value;
+    // const fn = document.getElementById('fName').value;
+    // const ln = document.getElementById('lName').value;
 
-    if(fn.trim().length > 0 && ln.trim().length > 0){
+    // if(fn.trim().length > 0 && ln.trim().length > 0){
         document.getElementById('s1').style.display = "none";
         document.getElementById('q1').style.display = "block";
-        obj.push({"FirstName": fn}, {"LastName": ln});
+         obj.push({"FirstName": 'xx'}, {"LastName": 'xx'});
 
 
-    } else {
-        alert("Please input a First and Last Name to continue.")
-    }
+    // } else {
+    //     alert("Please input a First and Last Name to continue.")
+    // }
 }
 
 function question1(answer){
@@ -36,8 +36,19 @@ function question2(res){
 
 function question3(answer){
     document.getElementById('q3').style.display = "none";
-    document.getElementById('c1').style.display = "block";
+    document.getElementById('q4').style.display = "block";
     obj.push({"q3": answer})
+}
+
+function question4(res){
+    const str = document.getElementById('resText').value;
+    if (str.trim().length > 15){
+        document.getElementById('q4').style.display = "none";
+        document.getElementById('c1').style.display = "block";
+        obj.push({"q4": str})
+    } else {
+        alert("Please input a longer response...")
+    }
 }
 
 function submitSurvey(){
@@ -59,11 +70,19 @@ function submitSurvey(){
     Question1: obj[2].q1,
     Question2: obj[3].q2,
     Question3: obj[4].q3,
+    Question4: obj[5].q4,
     Time: timeStamp
     }).then(function() {
         console.log("Document successfully saved!");
+        document.getElementById('ad').style.display = "none";
+        document.getElementById('donebtn').style.display = "none";
+        alert("Document successfully saved!");
+        document.getElementById('done').style.display = "block";
 
+        setTimeout(function(){ window.location.href = "https://conceptandcolor.com"; }, 2000);
+        
     }).catch(function(error) {
         console.error("Error writing document: ", error);
+        alert(error + "Please try again.")
     });
 }
