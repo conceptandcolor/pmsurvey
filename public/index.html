@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
+
+    <script defer src="/__/firebase/5.3.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <title>C2</title>
+  </head>
+  <body>
+    <ul class="nav justify-content-center" style="background-color: rgb(71, 138, 255);">
+        <li class="nav-item">
+            <h2>Concept and Color</h2>
+          <!-- <a class="nav-link" href="#">Link</a> -->
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">Link</a> -->
+        </li>
+      </ul>
+
+      <div class="jumbotron" style="background-color: white;" id="s1">
+        <h1 class="display-4">Hello!</h1>
+        <p class="lead">Thank you for taking the time to take this survey!</p>
+        <hr class="my-4">
+        <div class="row p-4">
+            <div class="col">
+              <input type="text" id="fName" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+              <input type="text"  id="lName" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+        <a class="btn btn-primary btn-lg mt-2 ml-4" onclick="start()" role="button">Start</a>
+      </div>
+
+      <!-- QUESTION 1-->
+      <div class="card text-center" style="display: none;" id="q1">
+        <div class="card-header">
+          Question 1
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Have you heard about or seen the company shown in the logo?</h5>
+          <p class="card-text"><img src="abc.png" height="250"></p>
+          <a onclick="question1('Yes')" class="btn btn-primary">Yes</a>
+          <a onclick="question1('No')" class="btn btn-primary">No</a>
+        </div>
+        <!-- <div class="card-footer text-muted">
+          2 days ago
+        </div> -->
+      </div>
+
+      <!-- QUESTION 2-->
+      <div class="card text-center" style="display: none;" id="q2">
+        <div class="card-header">
+          Question 2
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">What 3 things would you associate about this company when looking at its logo?</h5>
+          <p class="card-text"><img src="abc.png" height="250"></p>
+          <div class="p-4">
+            <textarea placeholder="Text area..." class="form-control" id="resText" rows="3"></textarea>
+
+          </div>
+          <a onclick="question2()" class="btn btn-primary">Submit</a>
+        </div>
+      </div>
+
+        <!-- QUESTION 3-->
+        <div class="card text-center" style="display: none;" id="q3">
+            <div class="card-header">
+                Question 3
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Based off the logo do you feel the company is:</h5>
+                <p class="card-text"><img src="abc.png" height="250"></p>
+                <a onclick="question3('A')" class="btn btn-primary">A.) Big Corporate Company</a>
+                <a onclick="question3('B')" class="btn btn-primary">B.) Niche, user friendly company</a>
+                <a onclick="question3('C')" class="btn btn-primary">C.) Not enough to decide</a>
+            </div>
+            </div>
+
+            <div class="jumbotron" style="background-color: white; display: none;" id="c1" >
+            <h1 class="display-4">Almost done!</h1>
+            <p class="lead">Thank you for taking the time to take this survey!</p>
+            <a onclick="submitSurvey()" class="btn btn-primary">Submit Survey</a>
+            </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
